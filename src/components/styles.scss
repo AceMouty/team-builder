@@ -1,0 +1,74 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	font-size: 62.5%;
+}
+
+.App{
+
+	// border: 2px solid red;
+	width: 80%;
+	margin: 0 auto;
+
+	// Form Styling
+	.form-container{
+
+		h1{
+			text-align: center;
+			font-size: 5rem;
+		}
+
+		form{
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			margin: 4rem;
+
+			label{
+				margin:0 1rem 0 2rem;
+				font-size: 1.6rem;
+			}
+
+		}
+
+		button{
+			margin-left: 2rem;
+		}
+	}
+
+	// Card container and styling
+	.card-container {
+		// border: 2px solid red;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.card {
+			// border: .2rem solid purple;
+			background-color: #f8f8f8;
+			border-radius: 1rem;
+			padding: 2rem;
+			width: 45rem;
+			margin: 2rem 0;
+
+			h1{
+				font-size: 3rem;
+			}
+
+			h2{
+				font-size: 2rem;
+				color: gray;
+			}
+
+			p{
+				font-size: 1.8rem;
+				font-weight: bold;
+				margin-top: 1rem;
+			}
+		}
+	}
+
+}
