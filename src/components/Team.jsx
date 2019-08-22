@@ -1,9 +1,23 @@
 import React from 'react';
 
-function Team () {
+import '../App.css'
+
+function Team ({teamMembers}) {
 	return(
-		<div className="team-container">
-			<h2>List of Current Team Members</h2>
+		<div className="card-container">
+			{teamMembers.map(member => {
+				return (
+					<div className="card">
+						<h1 className="card-header">
+							{member.name}
+						</h1>
+						<h2 className="card-sub-header">
+							{member.email}
+						</h2>
+						<p>{member.role}</p>
+					</div>
+				)
+			})}
 		</div>
 	)
 }

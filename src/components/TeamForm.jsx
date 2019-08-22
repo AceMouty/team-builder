@@ -9,15 +9,30 @@ function TeamForm (props) {
 		role: ""
 	})
 
+	const submitForm = event => {
+    //  Prevent the default reload of a button click in a form
+    event.preventDefault();
+
+    const newTeamMember = {
+      ...newMember,
+      id: uuid()
+    };
+
+    props.addNewMember(newTeamMember);
+    setNewMember({ name: "", email: "", role: ""});
+  };
+
+
+
 	const changeHandler = event => {
     console.log(event.target.value);
     setNewMember({ ...newMember, [event.target.name]: event.target.value });
   };
 
 	return(
-		<div>
+		<div className="form-container">
 			<h1>Team Form</h1>
-			<form>
+			<form onSubmit={submitForm}>
 
 				{/* Name Field */}
 				<label htmlFor="name">Name</label>
@@ -25,7 +40,7 @@ function TeamForm (props) {
 					type="text" 
 					name="name" 
 					placeholder="First Name"
-					vlaue={newMember.name}
+					value={newMember.name}
 					onChange={changeHandler}
 					/>
 
@@ -36,6 +51,7 @@ function TeamForm (props) {
 					placeholder="myEmail@something.com"
 					value={newMember.email}
 					onChange={changeHandler}
+					required
 				/>
 
 				<label htmlFor="role">Role</label>
